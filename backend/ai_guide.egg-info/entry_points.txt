@@ -1,0 +1,2 @@
+[console_scripts]
+ai_guide = backend.python.Map:app.run

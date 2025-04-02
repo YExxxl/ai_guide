@@ -1,0 +1,7 @@
+setup.py
+ai_guide.egg-info/PKG-INFO
+ai_guide.egg-info/SOURCES.txt
+ai_guide.egg-info/dependency_links.txt
+ai_guide.egg-info/entry_points.txt
+ai_guide.egg-info/requires.txt
+ai_guide.egg-info/top_level.txt

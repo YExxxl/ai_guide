@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: ai_guide
+Version: 0.1.0
+Requires-Dist: Flask==2.0.1
+Requires-Dist: pandas==2.2.3
+Requires-Dist: scikit-learn==1.6.0
+Requires-Dist: langchain-community==0.3.13
+Requires-Dist: flask-cors==3.0.10
