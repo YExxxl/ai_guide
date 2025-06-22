@@ -6,14 +6,14 @@
     <div class="map-control">
       <!-- 用户输入起点关键字 -->
       <div class="input-box">
-        <label for="start-keyword">起点:</label>
+        <label for="start-keyword">需求输入:</label>
         <input
           type="text"
           id="start-keyword"
           v-model="startKeyword"
-          placeholder="输入起点名称或地址"
+          placeholder="请输入旅游路线需求"
         />
-        <button @click="updateStartPointByKeyword">设置</button>
+        <button @click="updateStartPointByKeyword">搜索</button>
       </div>
 
       <!-- 途径点列表 -->
@@ -59,7 +59,7 @@ import axios from "axios";
 
 // 高德地图的安全配置
 window._AMapSecurityConfig = {
-  securityJsCode: "ec8adf4e8391d21d731097950a7ee629",
+  securityJsCode: "43c2adf315b69c854c47bad7f98fe072",
 };
 
 let map = null;
@@ -80,7 +80,7 @@ const waypoints = ref([]);
 // 获取地图和地理编码服务
 const getMap = () => {
   AMapLoader.load({
-    key: "3f50aca02d16211faf1ee5bf80b8ed6e",
+    key: "d19ddce901bfbac5c9a43ad5d42e2ebc",
     version: "1.4.15",
     plugins: [
       "AMap.InfoWindow",
@@ -270,19 +270,21 @@ onMounted(() => {
 });
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 @color1: blue;
 
 .content {
   width: 100vw; /* 地图容器全宽 */
   height: 100vh; /* 地图容器全高 */
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: @color1;
-  position: relative;
   display: inline-block;
 }
 
 .map-control {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .route-info {
@@ -293,7 +295,10 @@ onMounted(() => {
   position: absolute;
   top: 80px; /* 距离顶部一定高度以避免遮挡起点输入框 */
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  background-color: #fffced;
+  background-color: #ffffff;
+  border:#dcdcdc 2px solid;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   left: 20px; /* 距离左边的高度 */
 }
 
@@ -384,7 +389,12 @@ onMounted(() => {
   left: 20px; /* 距离左边的高度 */
   z-index: 1000; /* 确保输入框在地图的上方 */
   padding: 20px;
-  background-color: #fffced;
+  background-color: #ffffff;
+  border-top:#dcdcdc 2px solid;
+  border-left:#dcdcdc 2px solid;
+  border-right:#dcdcdc 2px solid;
+  border-top-left-radius: 10px; /* 圆角 */
+  border-top-right-radius: 10px; /* 圆角 */
   display: flex;
   align-items: center;
   gap: 10px; /* 调整间距 */
